@@ -1,0 +1,58 @@
+@use "src/sass/mixins";
+.container {
+    height: 100vh;
+    width: 100vw;
+    @include mixins.flexCenter;
+
+    .calculator {
+        height: 80%;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+
+        .result {
+            flex: 0.2 0;
+            background-color: green;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 10px;
+            font-size: 30px;
+
+            .currentVal {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+        .buttons {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .row {
+                flex: 1;
+                background-color: yellow;
+                display: flex;
+                .column {
+                    flex: 1;
+                    @include mixins.flexCenter;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
